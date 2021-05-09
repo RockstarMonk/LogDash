@@ -3,5 +3,7 @@
  
  Technologies used:
  >> React Hooks
+ >> 
  >> React Context
+ >> 
  >> React Navigation v5 (Drawer Navigation and Material Bottom Tab Navigation)
