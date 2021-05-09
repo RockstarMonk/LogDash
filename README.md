@@ -25,3 +25,7 @@
 ### Sign Out Screen (Dashboard)
 
 ![Screenshot_2021-05-09-08-07-55-801_host exp exponent](https://user-images.githubusercontent.com/45497403/117559586-2bbf1400-b0a4-11eb-9e8a-ed62e4a18f3a.jpg)
+
+### Drawer Stack Screen
+
+![Screenshot_2021-05-09-08-07-59-555_host exp exponent](https://user-images.githubusercontent.com/45497403/117559853-6a55ce00-b0a6-11eb-82fe-a85dc5ebd696.jpg)
