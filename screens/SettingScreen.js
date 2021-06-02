@@ -2,15 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View, StatusBar, ScrollView, Button } from 'react-native';
 
 import { createStackNavigator } from '@react-navigation/stack';                           //for stacking pages
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';  //for Bottom Tabs
 import Icon from 'react-native-vector-icons/Ionicons'                                     //for drawer and tab icons
 
-const ExploreStack = createStackNavigator();                              //separate screen stack for LoginScreen
+const SettingStack = createStackNavigator();                              //separate screen stack for LoginScreen
 
-const ExploreScreen = ({navigation}) =>  {
+const SettingScreen = ({navigation}) =>  {
     return (
       <View style = {{ flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center'}}>
-        <Text style = {{marginBottom: 20, fontSize: 18, fontWeight: 'bold'}}>Welcome to Explore Screen!</Text>
+        <Text style = {{marginBottom: 20, fontSize: 18, fontWeight: 'bold'}}>Welcome to Settings Screen!</Text>
         <Button 
           title = "Go Home"
           onPress = {() => navigation.navigate("Home")}
@@ -23,42 +22,42 @@ const ExploreScreen = ({navigation}) =>  {
     );
 }
 
-const ExploreStackScreen = ({navigation}) => {                                //separate screen stack for ExploreScreen
+const SettingStackScreen = ({navigation}) => {                                //separate screen stack for SettingScreen
   return (
-    <ExploreStack.Navigator screenOptions = {{
+    <SettingStack.Navigator screenOptions = {{
       headerStyle:  {
-      backgroundColor: '#07914c'
+      backgroundColor: '#000'
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontWeight: 'normal'
       }
     }}>
-      <ExploreStack.Screen 
-        name = "Explore" 
-        component = {ExploreScreen}
+      <SettingStack.Screen 
+        name = "Setting" 
+        component = {SettingScreen}
         options = {{
-          title: "Explore More",
+          title: "My Settings",
           headerLeft: () => (
             <Icon.Button
               name = "menu"
               size = {25}
-              backgroundColor = "#07914c"
+              backgroundColor = "#000"
               onPress = {() => navigation.openDrawer()}
             />
           ),
           headerRight: () => (
             <Icon.Button
-              name = "settings-outline"
+              name = "md-home-outline"
               size = {25}
-              backgroundColor = "#07914c"
-              onPress = {() => navigation.navigate("Setting")}
+              backgroundColor = "#000"
+              onPress = {() => navigation.navigate("Home")}
             />
           )
         }}
       />
-    </ExploreStack.Navigator>
+    </SettingStack.Navigator>
   );
 }
 
-export default ExploreStackScreen;
+export default SettingStackScreen;

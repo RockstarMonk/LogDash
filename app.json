@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "React native app with a Loginscreen and Dashboard.",
+    "githubUrl": "https://github.com/RockstarMonk/LogDash"
   }
 }

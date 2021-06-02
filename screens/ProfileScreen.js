@@ -7,9 +7,9 @@ import Icon from 'react-native-vector-icons/Ionicons'                           
 
 import { AuthContext } from '../components/context'
 
-const SignOutStack = createStackNavigator();                              //separate screen stack for SignOutScreen
+const ProfileStack = createStackNavigator();                              //separate screen stack for ProfileScreen
 
-const SignOutScreen = ({navigation}) => {
+const ProfileScreen = ({navigation}) => {
 
   const { signOut } = React.useContext(AuthContext);
 
@@ -28,34 +28,42 @@ const SignOutScreen = ({navigation}) => {
     );
 }
 
-const SignOutStackScreen = ({navigation}) => {                               //separate screen stack for SignOutScreen
+const ProfileStackScreen = ({navigation}) => {                               //separate screen stack for ProfileScreen
     return (
-      <SignOutStack.Navigator screenOptions = {{
+      <ProfileStack.Navigator screenOptions = {{
         headerStyle:  {
-        backgroundColor: '#0a1c2b'
+        backgroundColor: '#b5071e'
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
           fontWeight: 'normal'
         }
       }}>
-        <SignOutStack.Screen 
-          name = "SignOut" 
-          component = {SignOutScreen}
+        <ProfileStack.Screen 
+          name = "Profile" 
+          component = {ProfileScreen}
           options = {{
-            title: "Sign out",
+            title: "My Profile",
             headerLeft: () => (
               <Icon.Button
                 name = "menu"
                 size = {25}
-                backgroundColor = "#0a1c2b"
+                backgroundColor = "#b5071e"
                 onPress = {() => navigation.openDrawer()}
+              />
+            ),
+            headerRight: () => (
+              <Icon.Button
+                name = "settings-outline"
+                size = {25}
+                backgroundColor = "#b5071e"
+                onPress = {() => navigation.navigate("Setting")}
               />
             )
           }}
         />
-      </SignOutStack.Navigator>
+      </ProfileStack.Navigator>
     );
 }
 
-export default SignOutStackScreen;
+export default ProfileStackScreen;

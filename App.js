@@ -7,8 +7,10 @@ import { createDrawerNavigator } from '@react-navigation/drawer';               
 import BottomTabScreen from './screens/BottomTabScreen';
 import ExploreStackScreen from './screens/ExploreScreen';
 import ActivityStackScreen from './screens/ActivityScreen';
-import SignOutStackScreen from './screens/SignOutScreen';
+import ProfileStackScreen from './screens/ProfileScreen';
+import SettingStackScreen from './screens/SettingScreen';
 import InitialScreen from './screens/InitialScreen';
+import DrawerContent from './screens/DrawerContent';
 
 import { useEffect } from 'react';
 import { AuthContext } from './components/context'
@@ -53,11 +55,12 @@ const App = () => {
     <AuthContext.Provider value = {authContext}>
       <NavigationContainer>
         {userToken !== null ?
-          <Drawer.Navigator initialRouteName="Home">               
+          <Drawer.Navigator drawerContent = {props => <DrawerContent {...props} />}>               
             <Drawer.Screen name="Home" component={BottomTabScreen} />
             <Drawer.Screen name="Explore" component={ExploreStackScreen} />
             <Drawer.Screen name="Activity" component={ActivityStackScreen} />
-            <Drawer.Screen name="SignOut" component={SignOutStackScreen} />
+            <Drawer.Screen name="Profile" component={ProfileStackScreen} />
+            <Drawer.Screen name="Setting" component={SettingStackScreen} />
           </Drawer.Navigator>
         :
         <InitialScreen /> }

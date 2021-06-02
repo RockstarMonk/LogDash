@@ -27,7 +27,7 @@ const ActivityStackScreen = ({navigation}) => {                                 
     return (
       <ActivityStack.Navigator screenOptions = {{
         headerStyle:  {
-        backgroundColor: '#0a1c2b'
+        backgroundColor: '#500ca6'
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -43,8 +43,16 @@ const ActivityStackScreen = ({navigation}) => {                                 
               <Icon.Button
                 name = "menu"
                 size = {25}
-                backgroundColor = "#0a1c2b"
+                backgroundColor = "#500ca6"
                 onPress = {() => navigation.openDrawer()}
+              />
+            ),
+            headerRight: () => (
+              <Icon.Button
+                name = "settings-outline"
+                size = {25}
+                backgroundColor = "#500ca6"
+                onPress = {() => navigation.navigate("Setting")}
               />
             )
           }}

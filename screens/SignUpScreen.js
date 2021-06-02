@@ -16,7 +16,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import SignUpScreen from './SignUpScreen';
-import SignOutStackScreen from './SignOutScreen';
+import ProfileStackScreen from './ProfileScreen';
 
 import { AuthContext } from '../components/context'
 

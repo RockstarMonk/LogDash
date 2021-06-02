@@ -1,18 +1,15 @@
 import React from 'react';
 
-import { createStackNavigator } from '@react-navigation/stack';                           //for stacking pages
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';  //for Bottom Tabs
 import Icon from 'react-native-vector-icons/Ionicons'                                     //for drawer and tab icons
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import Feather from 'react-native-vector-icons/Feather';
-import Octicon from 'react-native-vector-icons/Octicons'
+import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons'
+import Icon3 from 'react-native-vector-icons/Feather';
 
-import HomeScreen from './HomeScreen';
+import HomeStackScreen from './HomeScreen';
 import ExploreStackScreen from './ExploreScreen';
 import ActivityStackScreen from './ActivityScreen';
-import SignOutStackScreen from './SignOutScreen';
+import ProfileStackScreen from './ProfileScreen';
 
-const HomeStack = createStackNavigator();                                 //separate screen stack for HomeScreen
 const Tab = createMaterialBottomTabNavigator();                           //Material Bottom Tab functionality
 
 const BottomTabScreen = () =>  {
@@ -26,9 +23,9 @@ const BottomTabScreen = () =>  {
         component = {HomeStackScreen}
         options={{
           tabBarLabel: 'Home',
-          tabBarColor: '#0a1c2b',
+          tabBarColor: '#041d69',
           tabBarIcon: ({ color }) => (
-            <Icon name="home" color={color} size={26} />
+            <Icon name="md-home-outline" color={color} size={26} />
           ),
         }}
       />
@@ -37,9 +34,9 @@ const BottomTabScreen = () =>  {
         component = {ExploreStackScreen}
         options = {{
           tabBarLabel: 'Explore',
-          tabBarColor: '#0a1c2b',
+          tabBarColor: '#07914c',
           tabBarIcon: ({ color }) => (
-            <MaterialIcons name="explore" color={color} size={26} />
+            <Icon2 name="compass-outline" color={color} size={26} />
           ),
         }}
       />
@@ -48,20 +45,20 @@ const BottomTabScreen = () =>  {
         component = {ActivityStackScreen}
         options = {{
           tabBarLabel: 'Activity',
-          tabBarColor: '#0a1c2b',
+          tabBarColor: '#500ca6',
           tabBarIcon: ({ color }) => (
-            <Feather name="activity" color={color} size={26} />
+            <Icon3 name="activity" color={color} size={26} />
           ),
         }}
       />
       <Tab.Screen
-        name = "SignOut"
-        component = {SignOutStackScreen}
+        name = "Profile"
+        component = {ProfileStackScreen}
         options = {{
-          tabBarLabel: 'Sign Out',
-          tabBarColor: '#0a1c2b',
+          tabBarLabel: 'Profile',
+          tabBarColor: '#b5071e',
           tabBarIcon: ({ color }) => (
-            <Octicon name="sign-out" color={color} size={26} />
+            <Icon2 name="account-outline" color={color} size={26} />
           ),
         }}
       />
@@ -71,32 +68,4 @@ const BottomTabScreen = () =>  {
 
 export default BottomTabScreen;                                        //exporting this function to app.js
 
-const HomeStackScreen = ({navigation}) => {                                       //separate screen stack for HomeScreen
-    return (
-      <HomeStack.Navigator screenOptions = {{
-        headerStyle:  {
-          backgroundColor: '#0a1c2b'
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'normal'
-        }
-      }}>
-        <HomeStack.Screen                                                    //opening and closing the drawer
-          name = "Home" 
-          component = {HomeScreen}
-          options = {{
-            title: "Home Page",
-            headerLeft: () => (
-              <Icon.Button
-                name = "menu"
-                size = {25}
-                backgroundColor = "#0a1c2b"
-                onPress = {() => navigation.openDrawer()}
-              />
-            )
-          }}
-        />
-      </HomeStack.Navigator>
-    );
-}
+
